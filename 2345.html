@@ -1,48 +1,98 @@
-﻿<!DOCTYPE html>
-<html>
+It looks like you're asking for a way to present the steps to work as an electrician after completing the 18th Edition in HTML. Here's how you can structure this information in HTML:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Task Info Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steps to Work as an Electrician</title>
     <style>
-        .task {
-            margin-bottom: 20px;
-            padding: 10px;
-            background-color: #f5f5f5;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
         }
-
-        .task-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 5px;
+        h1 {
+            color: #333;
         }
-
-        .task-description {
-            font-size: 14px;
-            margin-bottom: 10px;
+        ol {
+            counter-reset: step-counter;
         }
-
-        .task-info {
-            font-size: 12px;
-            color: #888;
+        li {
+            margin: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        li::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #333;
+            color: #fff;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+        }
+        .sub-steps {
+            margin-top: 10px;
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .sub-steps li {
+            padding-left: 20px;
+            position: relative;
+        }
+        .sub-steps li::before {
+            content: '-';
+            position: absolute;
+            left: 0;
+            top: 0;
         }
     </style>
 </head>
 <body>
-    <h1>Task Info Example</h1>
-
-    <div class="task">
-        <h2 class="task-title">Task 1</h2>
-        <p class="task-description">Update CSCS card</p>
-        <p class="task-info">Assigned to: A Vaskys</p>
-        <p class="task-info">Due date: September 31, 2024</p>
-    </div>
-
-    <div class="task">
-        <h2 class="task-title">Task 2</h2>
-        <p class="task-description">This is the description of Task 2.</p>
-        <p class="task-info">Assigned to: A Vaskys</p>
-        <p class="task-info">Due date: June 15, 2025</p>
-    </div>
+    <h1>Steps to Work as an Electrician After Completing the 18th Edition</h1>
+    <ol>
+        <li>
+            <strong>Education and Training</strong>
+            <ul class="sub-steps">
+                <li>Complete a relevant course: Typically, this involves completing an electrical installation course at a college or training center.</li>
+                <li>On-the-job training: Apprenticeships are a common way to gain practical experience while studying.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Certification</strong>
+            <ul class="sub-steps">
+                <li>18th Edition Qualification: You will need to pass the 18th Edition exam to demonstrate your knowledge of the latest IET Wiring Regulations.</li>
+                <li>Other relevant qualifications: Additional certifications like the NVQ Level 3 in Electrotechnical Services, Inspection and Testing qualifications, and the AM2 (Achievement Measurement 2) assessment might be required.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Registration</strong>
+            <ul class="sub-steps">
+                <li>Register with a competent person scheme: Organizations such as NICEIC, NAPIT, or ELECSA can help you get registered as a competent person, which is often necessary for self-certification of certain types of work.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Experience</strong>
+            <ul class="sub-steps">
+                <li>Gain practical experience: Many employers look for electricians with hands-on experience. Working under the supervision of experienced electricians can help you build the necessary skills.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Continuing Professional Development (CPD)</strong>
+            <ul class="sub-steps">
+                <li>Keep up to date: The electrical industry is always evolving, so ongoing CPD is crucial to stay current with new technologies, standards, and best practices.</li>
+            </ul>
+        </li>
+    </ol>
 </body>
 </html>
+```
+
+This HTML code will create a well-structured web page outlining the steps to work as an electrician after completing the 18th Edition. The styling ensures that each step is clearly numbered, and sub-steps are indented for easy reading.
